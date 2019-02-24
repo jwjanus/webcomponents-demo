@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Components Demo 2</title>
+    <script>
+      customElements.whenDefined("custom-input").then(() => {
+        console.log("custom-input defined");
+      });
+    </script>
+    <script type="module" src="./custom-input.js"></script>
+    <script type="module" src="./demo2.js"></script>
+  </head>
+
+  <body>
+    <template id="description">
+      <style>
+        p {
+          color: rebeccapurple;
+          font-weight: 700;
+          font-family: "Courier New", Courier, monospace;
+        }
+      </style>
+      <p>Description for <slot name="desc-type">default</slot></p>
+    </template>
+    <custom-input value="foo" needDescription="false">
+      <span slot="desc-type">input </span>
+    </custom-input>
+    <button onclick="clickHandler()">
+      change value
+    </button>
+    <script>
+      function clickHandler() {
+        document.querySelector("custom-input").value = "bar";
+      }
+    </script>
+  </body>
+</html>

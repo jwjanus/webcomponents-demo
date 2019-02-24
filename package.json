@@ -1,0 +1,15 @@
+{
+  "name": "webcomponents",
+  "version": "1.0.0",
+  "description": "Web Components Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/serve ."
+  },
+  "author": "jwjanus",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^10.1.2"
+  }
+}
