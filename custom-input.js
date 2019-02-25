@@ -17,17 +17,14 @@ export default function customInputFactory(needDescriptionDefault) {
     }
 
     set needDescription(newValue) {
-      const needDescription =
-        newValue === "false" ? false : newValue === "true" ? true : null;
+      const needDescription = newValue === "false" ? false : newValue === "true" ? true : null;
       this.setAttribute("needDescription", needDescription);
     }
     constructor() {
       super();
       const shadow = this.attachShadow({ mode: "closed" });
       const needDescription =
-        typeof this.needDescription === "boolean"
-          ? this.needDescription
-          : needDescriptionDefault;
+        typeof this.needDescription === "boolean" ? this.needDescription : needDescriptionDefault;
 
       if (needDescription) {
         const template = document.getElementById("description");
